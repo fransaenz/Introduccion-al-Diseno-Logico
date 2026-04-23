@@ -14,7 +14,7 @@ int strToPuntoFijo(char *str, int * numero) {
     i = 5;
     int fraccion = 0;
     while (str[i] != '\0' && (i < 9)) {
-        if (!isdigit(str[i])) return 1;
+        if (!isdigit(str[i])) return 1; // Hay un caracter que no es dígito.
         fraccion = fraccion * 10 + (str[i] - '0');
         i++;
     }
