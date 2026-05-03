@@ -5,10 +5,16 @@
 
 int esDecValido(const char * str) { // Verifica que la cadena cumpla el formato.
     
-    if (strlen(str) < 4) return 0; // como minimo debe haber 4 caracteres (ej: +0.0)
-    
-    if (str[0] != '-' && str[0] != '+') return 0; // El primer carácter deber ser + o -
-    
+    if (strlen(str) < 4) {
+        printf("Error: la cadena debe tener al menos 4 caracteres\n");
+        return 0;
+    }
+
+    if (str[0] != '-' && str[0] != '+') {
+        printf("Error: el primer carácter debe ser '+' o '-'\n");
+        return 0;
+    }
+
     int i;
     int punto = -1;
     
@@ -17,19 +23,34 @@ int esDecValido(const char * str) { // Verifica que la cadena cumpla el formato.
     
         if (str[i] == '.') {
     
-            if (punto != -1) return 0; // Si ya se encontró un punto, el formato no es válido.
+            if (punto != -1) {
+                printf("Error: debe haber un solo punto decimal\n");
+                return 0;
+            }
             punto = i; // Guarda la posición del punto 
     
         }
 
-        else if (!isdigit(str[i])) return 0;
+        else if (!isdigit(str[i])) {
+            printf("Error: no debe haber caracteres no numéricos\n");
+            return 0;
+        }
     }
     
-    return punto != -1; // El formato es válido solo si se encontró un punto.
+    if (punto == 1) {
+        printf("Error: no hay entero\n");
+        return 0;
+    }
+    if (str[punto + 1] == '\0') {
+        printf("Error: no hay fracción\n");
+        return 0;
+    }
+    
+    return punto != -1; // El formato es válido solo si se encontró un unico punto y este no es el ultimo o segundo caracter.
 }
 
 
-int separarPartes(const char * str, int * ent, int * frac, int * decimales) {
+int separarPartes(const char * str, int * ent, int * frac, int * decimales, int * sgn) { // Separa la parte entera y fraccionaria de la cadena, y cuenta la cantidad de decimales para ajustar la conversión a punto fijo.
     
     char entero[20];
     char fraccion[20];
@@ -59,15 +80,17 @@ int separarPartes(const char * str, int * ent, int * frac, int * decimales) {
     *ent = atoi(entero);
     *frac = atoi(fraccion);
     *decimales = j; // cantidad de dígitos en la parte fraccionaria 
-
-    if (str[0] == '-') *ent *= -1; // Convierte la parte entera a negativo si es necesario.
+    
+    if (str[0] == '-') *sgn = -1; // Convierte la parte entera a negativo si es necesario.
+    else *sgn = 1;
+    
     return 0;
 }
 
 
 
 // convierte a punto fijo
-int convertirQ(int ent, int frac, int bitsFrac, int decimales) {
+int convertirQ(int ent, int frac, int bitsFrac, int decimales, int signo) {
     
     int numero = ent << bitsFrac;
 
@@ -77,9 +100,8 @@ int convertirQ(int ent, int frac, int bitsFrac, int decimales) {
 
     int fracEscalada = (frac * (1 << bitsFrac)) / divisor;
 
-    if (ent < 0) fracEscalada = -fracEscalada; // Si el número es negativo, la fracción también debe ser negativa.
-    
     numero += fracEscalada;
+    numero *= signo; // Aplica el signo al resultado final.
 
     return numero;
 }
@@ -89,10 +111,10 @@ int main() {
 
     char m_str[20], b_str[20], x_str[20];
 
-    printf("Ingrese m (±entero.decimal): ");
+    printf("Ingrese m (±entero.decimal) [-1, 1): ");
     scanf("%19s", m_str);
 
-    printf("Ingrese b (±entero.decimal): ");
+    printf("Ingrese b (±entero.decimal) [-128, 128): ");
     scanf("%19s", b_str);
 
     printf("Ingrese x (±entero.decimal): ");
@@ -105,18 +127,29 @@ int main() {
     }
 
     //separo las partes entera y fraccionaria de cada número y la cantidad de decimales para ajustar la conversión a punto fijo.
-    int m_ent, m_frac, m_dec;
-    int b_ent, b_frac, b_dec;
-    int x_ent, x_frac, x_dec;
+    int m_ent, m_frac, m_dec, m_sgn;
+    int b_ent, b_frac, b_dec, b_sgn;
+    int x_ent, x_frac, x_dec, x_sgn;
 
-    separarPartes(m_str, &m_ent, &m_frac, &m_dec);
-    separarPartes(b_str, &b_ent, &b_frac, &b_dec);
-    separarPartes(x_str, &x_ent, &x_frac, &x_dec);
+    separarPartes(m_str, &m_ent, &m_frac, &m_dec, &m_sgn);
+    separarPartes(b_str, &b_ent, &b_frac, &b_dec, &b_sgn);
+    separarPartes(x_str, &x_ent, &x_frac, &x_dec, &x_sgn);
 
     // convierto a punto fijo
-    int m_q = convertirQ(m_ent, m_frac, 15, m_dec);   // Q(0,15)
-    int b_q = convertirQ(b_ent, b_frac, 8, b_dec);    // (7,8)
-    int x_q = convertirQ(x_ent, x_frac, 15, x_dec);   // (16,15)
+    int m_q = convertirQ(m_ent, m_frac, 15, m_dec, m_sgn);   // Q(0,15)
+    // validar rango de m
+    if (m_q < -(1 << 15) || m_q >= (1 << 15)) {
+        printf("Error: m fuera de rango para Q(0,15)\n");
+        return 1;
+    }
+    int b_q = convertirQ(b_ent, b_frac, 8, b_dec, b_sgn);    // Q(7,8)
+    // validar rango de b
+    if (b_q < -(1 << 15) || b_q >= (1 << 15)) {
+        printf("Error: b fuera de rango para Q(7,8)\n");
+        return 1;
+    }
+
+    int x_q = convertirQ(x_ent, x_frac, 15, x_dec, x_sgn);   // Q(16,15)
 
 
     //calculo de y = m*x + b en punto fijo
@@ -127,8 +160,11 @@ int main() {
     // ajustar escala: (0,15) * (16,15) = (16,30) → bajar a (16,15)
     int mult_ajustado = (int)(mult >> 15);
 
+    // ajustar b a la misma escala que m*x para poder sumarlos: (7,8) → (14,15)
+    int b_ajustado = b_q << (7); 
+
     //calculo y sumando b
-    int y_q = mult_ajustado + b_q;
+    int y_q = mult_ajustado + b_ajustado;
 
 
     printf("\n--- RESULTADOS ---\n");

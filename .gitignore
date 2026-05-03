@@ -1,4 +1,8 @@
-##Ignorar todo esto
+##Ignorar todo
+*
+##Menos esto
+!Entregable 0/**
+!Entregable 0
 
-Practica/
-Teorias/
+# ignorar ejecutables dentro del TP
+Entregable 0/*.exe
