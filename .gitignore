@@ -3,6 +3,13 @@
 ##Menos esto
 !Entregable 0/**
 !Entregable 0
+!Entregable 1/**
+!Entregable 1
+!Entregable 2/**
+!Entregable 2
+!Entregable 3/**
+!Entregable 3
 
 # ignorar ejecutables dentro del TP
 Entregable 0/*.exe
+
