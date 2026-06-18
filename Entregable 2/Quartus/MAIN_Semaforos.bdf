@@ -3076,22 +3076,6 @@ applicable agreement for further details.
 	(pt 600 664)
 )
 (connector
-	(pt 256 392)
-	(pt 248 392)
-)
-(connector
-	(pt 264 408)
-	(pt 248 408)
-)
-(connector
-	(pt 256 392)
-	(pt 256 272)
-)
-(connector
-	(pt 264 408)
-	(pt 264 288)
-)
-(connector
 	(pt 408 192)
 	(pt 432 192)
 )
@@ -3150,6 +3134,22 @@ applicable agreement for further details.
 (connector
 	(pt 312 256)
 	(pt 296 256)
+)
+(connector
+	(pt 256 392)
+	(pt 248 392)
+)
+(connector
+	(pt 264 408)
+	(pt 248 408)
+)
+(connector
+	(pt 256 272)
+	(pt 256 392)
+)
+(connector
+	(pt 264 288)
+	(pt 264 408)
 )
 (junction (pt 448 224))
 (junction (pt 456 240))
