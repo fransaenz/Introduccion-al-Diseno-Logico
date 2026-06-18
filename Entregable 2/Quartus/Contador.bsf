@@ -33,16 +33,9 @@ applicable agreement for further details.
 	(port
 		(pt 96 32)
 		(output)
-		(text "S1" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "S1" (rect 60 27 75 41)(font "Arial" (font_size 8)))
+		(text "T" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "T" (rect 68 27 75 41)(font "Arial" (font_size 8)))
 		(line (pt 96 32)(pt 80 32))
-	)
-	(port
-		(pt 96 48)
-		(output)
-		(text "S2" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "S2" (rect 60 43 75 57)(font "Arial" (font_size 8)))
-		(line (pt 96 48)(pt 80 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 80 80))

@@ -85,9 +85,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 128 248 296 264)
+	(rect -40 264 128 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "M" (rect 5 0 13 12)(font "Arial" ))
+	(text "CLKin" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -101,9 +101,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -16 384 152 400)
+	(rect -40 280 128 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLKin" (rect 5 0 35 12)(font "Arial" ))
+	(text "RSTn" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -2123,9 +2123,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 152 360 248 456)
+	(rect 152 320 248 416)
 	(text "Contador" (rect 5 0 56 14)(font "Arial" (font_size 8)))
-	(text "inst53" (rect 8 80 37 92)(font "Arial" ))
+	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -2136,16 +2136,9 @@ applicable agreement for further details.
 	(port
 		(pt 96 32)
 		(output)
-		(text "S1" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "S1" (rect 60 27 75 41)(font "Arial" (font_size 8)))
+		(text "T" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "T" (rect 68 27 75 41)(font "Arial" (font_size 8)))
 		(line (pt 96 32)(pt 80 32))
-	)
-	(port
-		(pt 96 48)
-		(output)
-		(text "S2" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "S2" (rect 60 43 75 57)(font "Arial" (font_size 8)))
-		(line (pt 96 48)(pt 80 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 80 80))
@@ -3124,32 +3117,36 @@ applicable agreement for further details.
 	(pt 312 240)
 )
 (connector
-	(pt 256 272)
+	(pt 256 256)
+	(pt 312 256)
+)
+(connector
+	(pt 256 352)
+	(pt 248 352)
+)
+(connector
+	(pt 256 256)
+	(pt 256 352)
+)
+(connector
+	(pt 144 272)
+	(pt 144 352)
+)
+(connector
+	(pt 144 352)
+	(pt 152 352)
+)
+(connector
+	(pt 128 272)
+	(pt 144 272)
+)
+(connector
+	(pt 144 272)
 	(pt 312 272)
 )
 (connector
-	(pt 264 288)
 	(pt 312 288)
-)
-(connector
-	(pt 312 256)
-	(pt 296 256)
-)
-(connector
-	(pt 256 392)
-	(pt 248 392)
-)
-(connector
-	(pt 264 408)
-	(pt 248 408)
-)
-(connector
-	(pt 256 272)
-	(pt 256 392)
-)
-(connector
-	(pt 264 288)
-	(pt 264 408)
+	(pt 128 288)
 )
 (junction (pt 448 224))
 (junction (pt 456 240))
@@ -3208,3 +3205,4 @@ applicable agreement for further details.
 (junction (pt 472 888))
 (junction (pt 480 864))
 (junction (pt 568 664))
+(junction (pt 144 272))
