@@ -1,0 +1,80 @@
+|MAIN_semaforos
+S1r <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+Q0 => Estados:inst.Q0
+Q1 => Estados:inst.Q1
+Q2 => Estados:inst.Q2
+Q3 => Estados:inst.Q3
+M => Estados:inst.M
+CLKin => Contador:inst1.CLK
+RSTn => Estados:inst.RSTn
+S2v <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+S2a <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+S2r <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+S3v <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+S3a <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+S3r <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+S4v <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+S4a <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+S4r <= inst38.DB_MAX_OUTPUT_PORT_TYPE
+P1v <= inst41.DB_MAX_OUTPUT_PORT_TYPE
+P1r <= inst47.DB_MAX_OUTPUT_PORT_TYPE
+P3v <= inst48.DB_MAX_OUTPUT_PORT_TYPE
+P3r <= inst54.DB_MAX_OUTPUT_PORT_TYPE
+S1v <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S1a <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN_semaforos|Estados:inst
+D0 <= D4.DB_MAX_OUTPUT_PORT_TYPE
+RSTn => D4.ACLR
+RSTn => D5.ACLR
+RSTn => D6.ACLR
+RSTn => D7.ACLR
+CLK => D4.CLK
+CLK => D5.CLK
+CLK => D6.CLK
+CLK => D7.CLK
+Q0 => inst0.IN0
+Q0 => inst11.IN0
+Q0 => inst13.IN0
+Q3 => inst4.IN0
+Q3 => inst.IN3
+Q3 => inst5.IN0
+M => inst7.IN1
+M => inst3.IN0
+M => inst12.IN2
+M => inst15.IN1
+M => inst6.IN0
+Q1 => inst1.IN0
+Q1 => inst11.IN1
+Q1 => inst13.IN1
+Q2 => inst2.IN0
+Q2 => inst14.IN1
+D1 <= D5.DB_MAX_OUTPUT_PORT_TYPE
+D2 <= D6.DB_MAX_OUTPUT_PORT_TYPE
+D3 <= D7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MAIN_semaforos|Contador:inst1
+T <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+PRN => Q0.PRESET
+PRN => Q1.PRESET
+PRN => Q5.PRESET
+PRN => Q4.PRESET
+PRN => Q3.PRESET
+PRN => Q2.PRESET
+JK => Q0.IN0
+JK => Q0.IN1
+JK => Q1.IN0
+JK => Q1.IN1
+JK => Q5.IN0
+JK => Q5.IN1
+JK => Q4.IN0
+JK => Q4.IN1
+JK => Q3.IN0
+JK => Q3.IN1
+JK => Q2.IN0
+JK => Q2.IN1
+CLK => Q0.CLK
+
+

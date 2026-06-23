@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\clatd\OneDrive\Escritorio\Introduccion-al-Diseno-Logico\Entregable2\Quartus\simulation\qsim
+vMAIN_semaforos
+Z1 I134kAB;9lMYb?kGW]3<bS1
+Z2 V^Q<4gTO@>`5f0_I?DIXP41
+Z3 dC:\Users\clatd\OneDrive\Escritorio\Introduccion-al-Diseno-Logico\Entregable2\Quartus\simulation\qsim
+Z4 w1782160030
+Z5 8MAIN_semaforos.vo
+Z6 FMAIN_semaforos.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|MAIN_semaforos.vo|
+Z9 o-work work -O0
+Z10 n@m@a@i@n_semaforos
+!i10b 1
+Z11 !s100 c8E;IY62g5_2df^PQi5AC0
+!s85 0
+Z12 !s108 1782160031.712000
+Z13 !s107 MAIN_semaforos.vo|
+!s101 -O0
+vMAIN_semaforos_vlg_check_tst
+!i10b 1
+!s100 3ZG@NHnQ?IP6^N8@On;983
+Ikf06hM2Y^oncW6_b9NZGi1
+Z14 Vn:8AEGCLE7RmNM0_j6R@=1
+R3
+Z15 w1782160029
+Z16 8Waveform.vwf.vt
+Z17 FWaveform.vwf.vt
+L0 69
+R7
+r1
+!s85 0
+31
+Z18 !s108 1782160031.778000
+Z19 !s107 Waveform.vwf.vt|
+Z20 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R9
+Z21 n@m@a@i@n_semaforos_vlg_check_tst
+vMAIN_semaforos_vlg_sample_tst
+!i10b 1
+!s100 gEkn0^:dUOODgnfLkR2IJ1
+I5EmfPDIi=<<lHR1k6:V1h1
+V=E7o1cm:K@QM>bZACUA6R0
+R3
+R15
+R16
+R17
+L0 29
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9
+Z22 n@m@a@i@n_semaforos_vlg_sample_tst
+vMAIN_semaforos_vlg_vec_tst
+!i10b 1
+!s100 ckV:DXeHc>EY`4SeYEO0k1
+I<Sb@9NGDbe?9XDfd^U]VX1
+Z23 VKh]CjFSc3U^3XZ5NjJ;i_3
+R3
+R15
+R16
+R17
+L0 585
+R7
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R9
+Z24 n@m@a@i@n_semaforos_vlg_vec_tst
