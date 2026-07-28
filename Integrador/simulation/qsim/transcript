@@ -1,0 +1,26 @@
+# do TrabajoIntegrador.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SUM4_FLAGS
+# 
+# Top level modules:
+# 	SUM4_FLAGS
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SUM4_FLAGS_vlg_sample_tst
+# -- Compiling module SUM4_FLAGS_vlg_check_tst
+# -- Compiling module SUM4_FLAGS_vlg_vec_tst
+# 
+# Top level modules:
+# 	SUM4_FLAGS_vlg_vec_tst
+# vsim -L cycloneiv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.SUM4_FLAGS_vlg_vec_tst 
+# Loading work.SUM4_FLAGS_vlg_vec_tst
+# Loading work.SUM4_FLAGS
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading work.SUM4_FLAGS_vlg_sample_tst
+# Loading work.SUM4_FLAGS_vlg_check_tst
+# Simulation passed !
+# ** Note: $finish    : Waveform.vwf.vt(313)
+#    Time: 1 us  Iteration: 0  Instance: /SUM4_FLAGS_vlg_vec_tst/tb_out
