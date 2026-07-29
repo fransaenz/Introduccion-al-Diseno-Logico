@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV GX"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY SUM4_FLAGS
+set_global_assignment -name TOP_LEVEL_ENTITY REG4_ASR
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:10:53  JULY 27, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
@@ -47,11 +47,17 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name BDF_FILE Decodificador.bdf
 set_global_assignment -name BDF_FILE SUM4_FLAGS.bdf
+set_global_assignment -name BDF_FILE SUM1.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Users/frans/Desktop/Facu/2026/IDLprueba/Integrador/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name BDF_FILE REG4.bdf
+set_global_assignment -name BDF_FILE REG4_ASR.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE REG4.01.vwf
+set_global_assignment -name BDF_FILE MUX2x1.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE REG4.02.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name BDF_FILE SUM1.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/altera/13.1/TI/simulation/qsim/" -section_id eda_simulation
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name VECTOR_WAVEFORM_FILE REG4_ASR.01.vwf

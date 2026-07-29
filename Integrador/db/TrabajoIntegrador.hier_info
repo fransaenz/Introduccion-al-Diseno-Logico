@@ -1,64 +1,59 @@
-|SUM4_FLAGS
-V <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-Carry_in => SUM1:inst.C_In
-A[0] => SUM1:inst.A
-A[1] => SUM1:inst6.A
-A[2] => SUM1:inst7.A
-A[3] => SUM1:inst8.A
-B[0] => SUM1:inst.B
-B[1] => SUM1:inst6.B
-B[2] => SUM1:inst7.B
-B[3] => SUM1:inst8.B
-C <= SUM1:inst8.C_Out
-N <= SUM1:inst8.S
-S[0] <= SUM1:inst.S
-S[1] <= SUM1:inst6.S
-S[2] <= SUM1:inst7.S
-S[3] <= SUM1:inst8.S
-Z <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+|REG4_ASR
+Q[0] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+D[0] => MUX2x1:inst8.A
+D[1] => MUX2x1:inst9.A
+D[2] => MUX2x1:inst10.A
+D[3] => MUX2x1:inst11.A
+SHIFT => MUX2x1:inst9.SELECT
+SHIFT => MUX2x1:inst10.SELECT
+SHIFT => MUX2x1:inst11.SELECT
+SHIFT => MUX2x1:inst8.SELECT
+CLK => inst3.CLK
+CLK => inst2.CLK
+CLK => inst1.CLK
+CLK => inst0.CLK
+LOAD => inst3.ENA
+LOAD => inst2.ENA
+LOAD => inst1.ENA
+LOAD => inst0.ENA
+OE => inst5.OE
+OE => inst6.OE
+OE => inst4.OE
+OE => inst7.OE
 
 
-|SUM4_FLAGS|SUM1:inst8
-S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-C_In => inst4.IN0
-C_In => inst5.IN0
-A => inst2.IN0
-A => inst3.IN0
-B => inst2.IN1
-B => inst3.IN1
-C_Out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+|REG4_ASR|MUX2x1:inst9
+S <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+SELECT => inst.IN0
+SELECT => inst3.IN0
+B => inst.IN1
+A => inst1.IN0
 
 
-|SUM4_FLAGS|SUM1:inst7
-S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-C_In => inst4.IN0
-C_In => inst5.IN0
-A => inst2.IN0
-A => inst3.IN0
-B => inst2.IN1
-B => inst3.IN1
-C_Out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+|REG4_ASR|MUX2x1:inst10
+S <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+SELECT => inst.IN0
+SELECT => inst3.IN0
+B => inst.IN1
+A => inst1.IN0
 
 
-|SUM4_FLAGS|SUM1:inst6
-S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-C_In => inst4.IN0
-C_In => inst5.IN0
-A => inst2.IN0
-A => inst3.IN0
-B => inst2.IN1
-B => inst3.IN1
-C_Out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+|REG4_ASR|MUX2x1:inst11
+S <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+SELECT => inst.IN0
+SELECT => inst3.IN0
+B => inst.IN1
+A => inst1.IN0
 
 
-|SUM4_FLAGS|SUM1:inst
-S <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-C_In => inst4.IN0
-C_In => inst5.IN0
-A => inst2.IN0
-A => inst3.IN0
-B => inst2.IN1
-B => inst3.IN1
-C_Out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+|REG4_ASR|MUX2x1:inst8
+S <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+SELECT => inst.IN0
+SELECT => inst3.IN0
+B => inst.IN1
+A => inst1.IN0
 
 

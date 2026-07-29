@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrabajoIntegrador
-Tue Jul 28 16:34:11 2026
+Wed Jul 29 18:58:01 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 28 16:34:11 2026      ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 29 18:58:01 2026      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; TrabajoIntegrador                          ;
-; Top-level Entity Name              ; SUM4_FLAGS                                 ;
+; Top-level Entity Name              ; REG4_ASR                                   ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 12                                         ;
-;     Total combinational functions  ; 12                                         ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 17                                         ;
+; Total logic elements               ; 4                                          ;
+;     Total combinational functions  ; 4                                          ;
+;     Dedicated logic registers      ; 4                                          ;
+; Total registers                    ; 4                                          ;
+; Total pins                         ; 12                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; SUM4_FLAGS         ; TrabajoIntegrador  ;
+; Top-level entity name                                                      ; REG4_ASR           ; TrabajoIntegrador  ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -148,25 +148,31 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 12     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 22          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-22        ;   0.0%      ;
++----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path     ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
-; SUM4_FLAGS.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM4_FLAGS.bdf ;         ;
-; SUM1.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM1.bdf       ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
+; REG4_ASR.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/frans/Desktop/Facu/2026/IDLprueba/Integrador/REG4_ASR.bdf ;         ;
+; MUX2x1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/frans/Desktop/Facu/2026/IDLprueba/Integrador/MUX2x1.bdf   ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -174,26 +180,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 17               ;
+; I/O pins                 ; 12               ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; A[2]~input       ;
+; Maximum fan-out node     ; OE~input         ;
 ; Maximum fan-out          ; 4                ;
-; Total fan-out            ; 65               ;
-; Average fan-out          ; 1.41             ;
+; Total fan-out            ; 44               ;
+; Average fan-out          ; 1.38             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
-; |SUM4_FLAGS                ; 12 (2)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 17   ; 0            ; |SUM4_FLAGS            ; work         ;
-;    |SUM1:inst6|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst6 ; work         ;
-;    |SUM1:inst7|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst7 ; work         ;
-;    |SUM1:inst8|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst8 ; work         ;
-;    |SUM1:inst|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst  ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; |REG4_ASR                  ; 4 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 12   ; 0            ; |REG4_ASR               ; work         ;
+;    |MUX2x1:inst10|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |REG4_ASR|MUX2x1:inst10 ; work         ;
+;    |MUX2x1:inst11|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |REG4_ASR|MUX2x1:inst11 ; work         ;
+;    |MUX2x1:inst8|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |REG4_ASR|MUX2x1:inst8  ; work         ;
+;    |MUX2x1:inst9|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |REG4_ASR|MUX2x1:inst9  ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -202,12 +208,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -227,28 +233,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jul 28 16:34:09 2026
+    Info: Processing started: Wed Jul 29 18:58:00 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrabajoIntegrador -c TrabajoIntegrador
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 22 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 16 of the 16 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file decodificador.bdf
     Info (12023): Found entity 1: Decodificador
 Info (12021): Found 1 design units, including 1 entities, in source file sum4_flags.bdf
     Info (12023): Found entity 1: SUM4_FLAGS
 Info (12021): Found 1 design units, including 1 entities, in source file sum1.bdf
     Info (12023): Found entity 1: SUM1
-Info (12127): Elaborating entity "SUM4_FLAGS" for the top level hierarchy
-Info (12128): Elaborating entity "SUM1" for hierarchy "SUM1:inst8"
+Info (12021): Found 1 design units, including 1 entities, in source file reg4.bdf
+    Info (12023): Found entity 1: REG4
+Info (12021): Found 1 design units, including 1 entities, in source file reg4_asr.bdf
+    Info (12023): Found entity 1: REG4_ASR
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1.bdf
+    Info (12023): Found entity 1: MUX2x1
+Info (12127): Elaborating entity "REG4_ASR" for the top level hierarchy
+Info (12128): Elaborating entity "MUX2x1" for hierarchy "MUX2x1:inst9"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 12 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4671 megabytes
-    Info: Processing ended: Tue Jul 28 16:34:11 2026
-    Info: Elapsed time: 00:00:02
+Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 4 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4725 megabytes
+    Info: Processing ended: Wed Jul 29 18:58:01 2026
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
