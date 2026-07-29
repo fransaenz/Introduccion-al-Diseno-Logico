@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TrabajoIntegrador
-Tue Jul 28 16:34:11 2026
+Tue Jul 28 22:43:28 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 28 16:34:11 2026      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 28 22:43:28 2026      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; TrabajoIntegrador                          ;
-; Top-level Entity Name              ; SUM4_FLAGS                                 ;
+; Top-level Entity Name              ; MAIN                                       ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 12                                         ;
-;     Total combinational functions  ; 12                                         ;
+; Total logic elements               ; 31                                         ;
+;     Total combinational functions  ; 31                                         ;
 ;     Dedicated logic registers      ; 0                                          ;
 ; Total registers                    ; 0                                          ;
-; Total pins                         ; 17                                         ;
+; Total pins                         ; 20                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; SUM4_FLAGS         ; TrabajoIntegrador  ;
+; Top-level entity name                                                      ; MAIN               ; TrabajoIntegrador  ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -159,14 +159,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path     ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
-; SUM4_FLAGS.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM4_FLAGS.bdf ;         ;
-; SUM1.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM1.bdf       ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path        ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+---------+
+; Decodificador.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/Decodificador.bdf ;         ;
+; SUM4_FLAGS.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM4_FLAGS.bdf    ;         ;
+; SUM1.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM1.bdf          ;         ;
+; MAIN.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/MAIN.bdf          ;         ;
+; SUM_REST4.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/SUM_REST4.bdf     ;         ;
+; NOT_4.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/NOT_4.bdf         ;         ;
+; AND_4.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/AND_4.bdf         ;         ;
+; OR_4.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/OR_4.bdf          ;         ;
+; FLAGS_Z-N.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/altera/13.1/TI/FLAGS_Z-N.bdf     ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -174,26 +181,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 17               ;
+; I/O pins                 ; 20               ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; A[2]~input       ;
-; Maximum fan-out          ; 4                ;
-; Total fan-out            ; 65               ;
-; Average fan-out          ; 1.41             ;
+; Maximum fan-out node     ; I[2]~input       ;
+; Maximum fan-out          ; 13               ;
+; Total fan-out            ; 147              ;
+; Average fan-out          ; 2.07             ;
 +--------------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
-; |SUM4_FLAGS                ; 12 (2)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 17   ; 0            ; |SUM4_FLAGS            ; work         ;
-;    |SUM1:inst6|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst6 ; work         ;
-;    |SUM1:inst7|            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst7 ; work         ;
-;    |SUM1:inst8|            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst8 ; work         ;
-;    |SUM1:inst|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |SUM4_FLAGS|SUM1:inst  ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |MAIN                      ; 31 (6)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 20   ; 0            ; |MAIN                                            ; work         ;
+;    |AND_4:inst9|           ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|AND_4:inst9                                ; work         ;
+;    |Decodificador:inst|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|Decodificador:inst                         ; work         ;
+;    |NOT_4:inst8|           ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|NOT_4:inst8                                ; work         ;
+;    |SUM_REST4:inst2|       ; 10 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2                            ; work         ;
+;       |SUM4_FLAGS:inst|    ; 9 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2|SUM4_FLAGS:inst            ; work         ;
+;          |SUM1:inst6|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2|SUM4_FLAGS:inst|SUM1:inst6 ; work         ;
+;          |SUM1:inst7|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2|SUM4_FLAGS:inst|SUM1:inst7 ; work         ;
+;          |SUM1:inst8|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2|SUM4_FLAGS:inst|SUM1:inst8 ; work         ;
+;          |SUM1:inst|       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |MAIN|SUM_REST4:inst2|SUM4_FLAGS:inst|SUM1:inst  ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -227,7 +239,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jul 28 16:34:09 2026
+    Info: Processing started: Tue Jul 28 22:43:26 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TrabajoIntegrador -c TrabajoIntegrador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file decodificador.bdf
@@ -236,19 +248,46 @@ Info (12021): Found 1 design units, including 1 entities, in source file sum4_fl
     Info (12023): Found entity 1: SUM4_FLAGS
 Info (12021): Found 1 design units, including 1 entities, in source file sum1.bdf
     Info (12023): Found entity 1: SUM1
-Info (12127): Elaborating entity "SUM4_FLAGS" for the top level hierarchy
-Info (12128): Elaborating entity "SUM1" for hierarchy "SUM1:inst8"
+Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
+    Info (12023): Found entity 1: MAIN
+Info (12021): Found 1 design units, including 1 entities, in source file sum_rest4.bdf
+    Info (12023): Found entity 1: SUM_REST4
+Info (12021): Found 1 design units, including 1 entities, in source file not_4.bdf
+    Info (12023): Found entity 1: NOT_4
+Info (12021): Found 1 design units, including 1 entities, in source file and_4.bdf
+    Info (12023): Found entity 1: AND_4
+Info (12021): Found 1 design units, including 1 entities, in source file or_4.bdf
+    Info (12023): Found entity 1: OR_4
+Info (12021): Found 1 design units, including 1 entities, in source file flags_z-n.bdf
+    Info (12023): Found entity 1: FLAGS_Z-N
+Info (12127): Elaborating entity "MAIN" for the top level hierarchy
+Info (12128): Elaborating entity "SUM_REST4" for hierarchy "SUM_REST4:inst2"
+Warning (275011): Block or symbol "TRI" of instance "inst3" overlaps another block or symbol
+Info (12128): Elaborating entity "SUM4_FLAGS" for hierarchy "SUM_REST4:inst2|SUM4_FLAGS:inst"
+Info (12128): Elaborating entity "SUM1" for hierarchy "SUM_REST4:inst2|SUM4_FLAGS:inst|SUM1:inst8"
+Info (12128): Elaborating entity "Decodificador" for hierarchy "Decodificador:inst"
+Info (12128): Elaborating entity "FLAGS_Z-N" for hierarchy "FLAGS_Z-N:inst15"
+Info (12128): Elaborating entity "AND_4" for hierarchy "AND_4:inst9"
+Info (12128): Elaborating entity "NOT_4" for hierarchy "NOT_4:inst8"
+Info (12128): Elaborating entity "OR_4" for hierarchy "OR_4:inst10"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "AND_4:inst9|inst2[3]" to the node "FLAGS_Z-N:inst15|inst" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "AND_4:inst9|inst2[2]" to the node "FLAGS_Z-N:inst15|inst" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "AND_4:inst9|inst2[1]" to the node "FLAGS_Z-N:inst15|inst" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "AND_4:inst9|inst2[0]" to the node "FLAGS_Z-N:inst15|inst" into an OR gate
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "I[3]"
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 12 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4671 megabytes
-    Info: Processing ended: Tue Jul 28 16:34:11 2026
+    Info (21061): Implemented 31 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4672 megabytes
+    Info: Processing ended: Tue Jul 28 22:43:28 2026
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
