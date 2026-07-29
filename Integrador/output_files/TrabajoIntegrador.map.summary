@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Jul 29 18:58:01 2026
+Analysis & Synthesis Status : Successful - Tue Jul 28 22:43:28 2026
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : TrabajoIntegrador
-Top-level Entity Name : REG4_ASR
+Top-level Entity Name : MAIN
 Family : Cyclone IV GX
-Total logic elements : 4
-    Total combinational functions : 4
-    Dedicated logic registers : 4
-Total registers : 4
-Total pins : 12
+Total logic elements : 31
+    Total combinational functions : 31
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 20
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

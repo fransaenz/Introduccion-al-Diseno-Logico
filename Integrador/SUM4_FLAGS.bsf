@@ -20,29 +20,29 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 152 144)
+	(rect 64 64 200 192)
 	(text "SUM4_FLAGS" (rect 5 0 86 14)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
-		(pt 0 32)
+		(pt 0 64)
 		(input)
 		(text "Carry_in" (rect 0 0 48 14)(font "Arial" (font_size 8)))
-		(text "Carry_in" (rect 21 27 69 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
+		(text "Carry_in" (rect 21 59 69 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[3..0]" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "A[3..0]" (rect 21 27 58 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "A[3..0]" (rect 0 0 37 14)(font "Arial" (font_size 8)))
-		(text "A[3..0]" (rect 21 43 58 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
 		(text "B[3..0]" (rect 0 0 36 14)(font "Arial" (font_size 8)))
-		(text "B[3..0]" (rect 21 59 57 73)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "B[3..0]" (rect 21 43 57 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 136 32)
